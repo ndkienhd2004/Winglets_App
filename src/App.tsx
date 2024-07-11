@@ -1,10 +1,11 @@
 import {StyleSheet, View} from 'react-native';
-import Card from './WingletsCard';
-
+import Card from './WingletsCard/WingletsCard';
+import MatchesScreen from './Screens/MatchesScreen';
 const App = () => {
   return (
     <View style={styles.pageContainer}>
-      <Card />
+      {/* <Card /> */}
+      <MatchesScreen />
     </View>
   );
 };
