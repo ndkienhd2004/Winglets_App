@@ -1,5 +1,5 @@
 import {StyleSheet, View} from 'react-native';
-import Card from './components/WingletsCard/WingletsCard';
+import Card from './WingletsCard';
 
 const App = () => {
   return (
