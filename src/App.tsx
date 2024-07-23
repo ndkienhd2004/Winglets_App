@@ -1,12 +1,13 @@
 import {StyleSheet, View} from 'react-native';
-import Card from './WingletsCard/WingletsCard';
 import MatchesScreen from './Screens/MatchesScreen';
+import HomeScreen from './Screens/HomeScreen';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 const App = () => {
   return (
-    <View style={styles.pageContainer}>
-      {/* <Card /> */}
-      <MatchesScreen />
-    </View>
+    <GestureHandlerRootView style={styles.pageContainer}>
+      <HomeScreen />
+      {/* <MatchesScreen /> */}
+    </GestureHandlerRootView>
   );
 };
 
