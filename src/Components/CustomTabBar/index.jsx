@@ -55,7 +55,7 @@ const CustomTabBar = ({state, descriptors, navigation}) => {
 const styles = StyleSheet.create({
   tabBarContainer: {
     flexDirection: 'row',
-    height: 70,
+    height: 64,
     backgroundColor: '#fff',
     borderTopWidth: 1,
     borderTopColor: '#ddd',

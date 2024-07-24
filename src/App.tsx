@@ -18,7 +18,6 @@ const App = () => {
           screenOptions={{
             headerShown: false,
             tabBarLabelStyle: {
-              fontSize: 16,
               fontWeight: 500,
               paddingTop: 0,
             },
