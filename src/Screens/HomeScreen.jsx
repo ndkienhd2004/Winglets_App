@@ -7,11 +7,11 @@ import AnimatedStack from '../Components/AnimatedStack';
 
 const HomeScreen = () => {
   const onSwipeLeft = user => {
-    console.warn('swipe left', user.name);
+    console.log('swipe left', user.name);
   };
 
   const onSwipeRight = user => {
-    console.warn('swipe right: ', user.name);
+    console.log('swipe right: ', user.name);
   };
 
   return (

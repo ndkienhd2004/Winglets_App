@@ -1,5 +1,7 @@
+import React from 'react';
 import {Image, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import users from '../../assets/data/user';
+
 const MatchesScreen = () => {
   return (
     <SafeAreaView style={styles.root}>
@@ -17,20 +19,15 @@ const MatchesScreen = () => {
   );
 };
 
-export default MatchesScreen;
-
 const styles = StyleSheet.create({
   root: {
-    width: '100%',
-    padding: 10,
     flex: 1,
-  },
-  container: {
     padding: 10,
   },
   header: {
     fontWeight: 'bold',
-    fontSize: 24,
+    fontSize: 32,
+    marginBottom: 10,
   },
   users: {
     flexDirection: 'row',
@@ -41,9 +38,7 @@ const styles = StyleSheet.create({
     height: 64,
     margin: 6,
     borderRadius: 50,
-
     borderWidth: 2,
-    padding: 3,
     borderColor: '#F63A6E',
   },
   image: {
@@ -52,3 +47,5 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
 });
+
+export default MatchesScreen;
