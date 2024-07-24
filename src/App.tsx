@@ -6,13 +6,15 @@ import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import HomeScreen from './Screens/HomeScreen';
 import MatchesScreen from './Screens/MatchesScreen';
 import CustomTabBar from './Components/CustomTabBar';
+import Login from './Screens/LoginScreen';
+import RegisterScreen from './Screens/RegisterScreen';
 
 const Tab = createBottomTabNavigator();
 
 const App = () => {
   return (
     <GestureHandlerRootView style={styles.container}>
-      <NavigationContainer>
+      {/* <NavigationContainer>
         <Tab.Navigator
           tabBar={props => <CustomTabBar {...props} />}
           screenOptions={{
@@ -26,7 +28,8 @@ const App = () => {
           <Tab.Screen name="Home" component={HomeScreen} />
           <Tab.Screen name="Matches" component={MatchesScreen} />
         </Tab.Navigator>
-      </NavigationContainer>
+      </NavigationContainer> */}
+      <RegisterScreen />
     </GestureHandlerRootView>
   );
 };
