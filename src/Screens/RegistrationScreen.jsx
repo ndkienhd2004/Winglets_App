@@ -8,10 +8,10 @@ import {
   Alert,
 } from 'react-native';
 import {StyleSheet} from 'react-native';
-import Button from '../Components/Button';
-import Input from '../Components/Input';
-import Loader from '../Components/Loader.jsx';
-const RegisterScreen = () => {
+import Button from '../Components/Button/index.jsx';
+import Input from '../Components/Input/index.jsx';
+import Loader from '../Components/Loader.jsx/index.jsx';
+const RegistrationScreen = ({navigation}) => {
   const [inputs, setInputs] = React.useState({
     email: '',
     fullname: '',
@@ -145,4 +145,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RegisterScreen;
+export default RegistrationScreen;

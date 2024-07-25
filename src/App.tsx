@@ -8,7 +8,7 @@ import HomeScreen from './Screens/HomeScreen';
 import MatchesScreen from './Screens/MatchesScreen';
 import CustomTabBar from './Components/CustomTabBar';
 import LoginScreen from './Screens/LoginScreen';
-import RegisterScreen from './Screens/RegisterScreen';
+import RegistrationScreen from './Screens/RegistrationScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -18,8 +18,10 @@ const App = () => {
 
   const AuthStack = () => (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="Register" component={RegisterScreen} />
-      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="LoginScreen">
+        {props => <LoginScreen {...props} setIsLoggedIn={setIsLoggedIn} />}
+      </Stack.Screen>
+      <Stack.Screen name="RegistrationScreen" component={RegistrationScreen} />
     </Stack.Navigator>
   );
 
@@ -35,7 +37,7 @@ const App = () => {
         tabBarActiveTintColor: '#E73688',
       }}>
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Matches" component={MatchesScreen} />
+      <Tab.Screen name="Chats" component={MatchesScreen} />
     </Tab.Navigator>
   );
 
