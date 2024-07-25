@@ -46,9 +46,8 @@ const MatchesScreen = () => {
               <Text style={styles.chatName}>{chat.name}</Text>
               <Text
                 style={styles.chatLastMessage}
-                numberOfLines={1} // Đặt thuộc tính này trên component <Text>
-                ellipsizeMode="tail" // Đặt thuộc tính này trên component <Text>
-              >
+                numberOfLines={1}
+                ellipsizeMode="tail">
                 {chat.lastMessage}
               </Text>
             </View>
