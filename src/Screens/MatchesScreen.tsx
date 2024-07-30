@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Image,
   SafeAreaView,
@@ -6,11 +6,14 @@ import {
   Text,
   View,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import users from '../../assets/data/user';
 import chats from '../../assets/data/chats';
 
 const MatchesScreen = () => {
+  const [pressedChatId, setPressedChatId] = useState('');
+
   return (
     <SafeAreaView style={styles.root}>
       <View>
@@ -31,28 +34,37 @@ const MatchesScreen = () => {
         <Text style={styles.text}>Messages</Text>
       </View>
       <View>
-        {chats.map(chat => (
-          <TouchableOpacity
-            style={styles.chatContainer}
-            key={chat.id}
-            activeOpacity={0.7}
-            onPress={() => {
-              console.log(`Pressed chat with ID: ${chat.id}`);
-            }}>
-            <View style={styles.chatImageContainer}>
-              <Image source={{uri: chat.image}} style={styles.chatImage} />
-            </View>
-            <View style={styles.chatTextContainer}>
-              <Text style={styles.chatName}>{chat.name}</Text>
-              <Text
-                style={styles.chatLastMessage}
-                numberOfLines={1}
-                ellipsizeMode="tail">
-                {chat.lastMessage}
-              </Text>
-            </View>
-          </TouchableOpacity>
-        ))}
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={styles.scrollViewContent}>
+          {chats.map(chat => (
+            <TouchableOpacity
+              style={[
+                styles.chatContainer,
+                pressedChatId === chat.id && styles.chatContainerPressed,
+              ]}
+              key={chat.id}
+              onPressIn={() => setPressedChatId(chat.id)}
+              onPressOut={() => setPressedChatId('')}
+              onPress={() => {
+                console.log(`Pressed chat with ID: ${pressedChatId}`);
+              }}>
+              <View style={styles.chatImageContainer}>
+                <Image source={{uri: chat.image}} style={styles.chatImage} />
+              </View>
+              <View style={styles.chatTextContainer}>
+                <Text style={styles.chatName}>{chat.name}</Text>
+                <Text
+                  style={styles.chatLastMessage}
+                  numberOfLines={1}
+                  ellipsizeMode="tail">
+                  {chat.lastMessage}
+                </Text>
+              </View>
+            </TouchableOpacity>
+          ))}
+          <View style={{height: 120}} />
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
@@ -95,10 +107,13 @@ const styles = StyleSheet.create({
   chatContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 6,
     backgroundColor: '#f0f0f0',
     borderRadius: 10,
     padding: 10,
+  },
+  chatContainerPressed: {
+    backgroundColor: '#FAC5DE', // Color when pressed
   },
   chatImageContainer: {
     marginRight: 10,
@@ -120,6 +135,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: 'gray',
     flexShrink: 1,
+  },
+  scrollViewContent: {
+    paddingBottom: 80,
   },
 });
 

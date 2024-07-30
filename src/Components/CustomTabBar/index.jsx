@@ -23,6 +23,31 @@ const CustomTabBar = ({state, descriptors, navigation}) => {
             navigation.navigate(route.name);
           }
         };
+        const renderIcon = (routeName, isFocused) => {
+          let iconName;
+          switch (routeName) {
+            case 'Home':
+              iconName = 'home';
+              break;
+            case 'Chats':
+              iconName = 'wechat';
+              break;
+            case 'Profile':
+              iconName = 'user';
+              break;
+            default:
+              iconName = 'circle';
+              break;
+          }
+
+          return (
+            <Icon
+              name={iconName}
+              size={24}
+              color={isFocused ? '#E73688' : '#000'}
+            />
+          );
+        };
 
         return (
           <TouchableOpacity
@@ -33,11 +58,7 @@ const CustomTabBar = ({state, descriptors, navigation}) => {
             accessibilityHint={options.tabBarAccessibilityHint}
             onPress={onPress}
             style={styles.tabButton}>
-            <Icon
-              name={route.name === 'Home' ? 'home' : 'wechat'}
-              size={24}
-              color={isFocused ? '#E73688' : '#000'}
-            />
+            {renderIcon(route.name, isFocused)}
             <Text
               style={[
                 styles.tabLabel,
