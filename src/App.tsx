@@ -9,6 +9,7 @@ import MatchesScreen from './Screens/MatchesScreen';
 import CustomTabBar from './Components/CustomTabBar';
 import LoginScreen from './Screens/LoginScreen';
 import RegistrationScreen from './Screens/RegistrationScreen';
+import ProfileScreen from './Screens/ProfileScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -27,6 +28,7 @@ const App = () => {
 
   const MainTabNavigator = () => (
     <Tab.Navigator
+      initialRouteName="Home"
       tabBar={props => <CustomTabBar {...props} />}
       screenOptions={{
         headerShown: false,
@@ -36,6 +38,7 @@ const App = () => {
         },
         tabBarActiveTintColor: '#E73688',
       }}>
+      <Tab.Screen name="Profile" component={ProfileScreen} />
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Chats" component={MatchesScreen} />
     </Tab.Navigator>

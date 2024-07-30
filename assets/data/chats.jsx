@@ -34,4 +34,32 @@ export default [
       'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim1.JPG',
     lastMessage: 'Hola',
   },
+  {
+    id: '6',
+    name: 'Vadim Savin',
+    image:
+      'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim1.JPG',
+    lastMessage: 'Hola',
+  },
+  {
+    id: '7',
+    name: 'Vadim Savin',
+    image:
+      'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim1.JPG',
+    lastMessage: 'Hola',
+  },
+  {
+    id: '8',
+    name: 'Vadim Savin',
+    image:
+      'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim1.JPG',
+    lastMessage: 'Hola',
+  },
+  {
+    id: '9',
+    name: 'Vadim Savin',
+    image:
+      'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim1.JPG',
+    lastMessage: 'Hola',
+  },
 ];
