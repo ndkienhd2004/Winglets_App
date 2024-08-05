@@ -10,7 +10,7 @@ import CustomTabBar from './Components/CustomTabBar';
 import LoginScreen from './Screens/LoginScreen';
 import RegistrationScreen from './Screens/RegistrationScreen';
 import ProfileScreen from './Screens/ProfileScreen';
-
+import ChatScreen from './Screens/ChatScreen';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -49,7 +49,14 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator screenOptions={{headerShown: false}}>
           {isLoggedIn ? (
-            <Stack.Screen name="Main" component={MainTabNavigator} />
+            <>
+              <Stack.Screen
+                name="Main"
+                component={MainTabNavigator}
+                options={{headerShown: false}}
+              />
+              <Stack.Screen name="ChatScreen" component={ChatScreen} />
+            </>
           ) : (
             <Stack.Screen name="Auth" component={AuthStack} />
           )}
