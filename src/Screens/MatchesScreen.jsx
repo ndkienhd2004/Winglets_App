@@ -10,10 +10,11 @@ import {
 } from 'react-native';
 import users from '../../assets/data/user';
 import chats from '../../assets/data/chats';
+import {useNavigation} from '@react-navigation/native';
 
 const MatchesScreen = () => {
   const [pressedChatId, setPressedChatId] = useState('');
-
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.root}>
       <View>
@@ -48,6 +49,7 @@ const MatchesScreen = () => {
               onPressOut={() => setPressedChatId('')}
               onPress={() => {
                 console.log(`Pressed chat with ID: ${pressedChatId}`);
+                navigation.navigate('ChatScreen', {chat});
               }}>
               <View style={styles.chatImageContainer}>
                 <Image source={{uri: chat.image}} style={styles.chatImage} />
@@ -113,7 +115,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   chatContainerPressed: {
-    backgroundColor: '#FAC5DE', // Color when pressed
+    backgroundColor: '#FAC5DE',
   },
   chatImageContainer: {
     marginRight: 10,
