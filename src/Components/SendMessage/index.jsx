@@ -1,12 +1,17 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
 const SendMessage = ({msg}) => {
   return (
     <View style={styles.container}>
-      <View style={styles.msgContainer}>
+      <LinearGradient
+        start={{x: 0, y: 1}}
+        end={{x: 1, y: 0}}
+        colors={['#FAB779', '#E73688']}
+        style={styles.msgContainer}>
         <Text style={styles.msg}>{msg}</Text>
-      </View>
+      </LinearGradient>
     </View>
   );
 };

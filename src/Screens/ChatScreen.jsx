@@ -16,7 +16,7 @@ const ChatScreen = ({route, navigation}) => {
     <View style={styles.container}>
       <View style={styles.screenHeader}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Icon name="angle-left" size={36} />
+          <Icon name="angle-left" size={36} color="#E73688" />
         </TouchableOpacity>
         <TouchableOpacity style={styles.user}>
           <View style={styles.chatImageContainer}>
@@ -26,10 +26,10 @@ const ChatScreen = ({route, navigation}) => {
         </TouchableOpacity>
         <View style={styles.headerIcons}>
           <TouchableOpacity>
-            <Zocial name="call" size={30} marginRight={10} />
+            <Zocial name="call" size={30} marginRight={10} color="#E73688" />
           </TouchableOpacity>
           <TouchableOpacity>
-            <Entypo name="dots-three-vertical" size={30} />
+            <Entypo name="dots-three-vertical" size={30} color="#E73688" />
           </TouchableOpacity>
         </View>
       </View>
@@ -49,19 +49,19 @@ const ChatScreen = ({route, navigation}) => {
       </ScrollView>
       <View style={styles.inputContainer}>
         <TouchableOpacity style={styles.icon}>
-          <Entypo name="grid" size={24} color="#006AFF" />
+          <Entypo name="grid" size={24} color="#E73688" />
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.icon}>
-          <FontAwesome5 name="camera" size={24} color="#006AFF" />
+          <FontAwesome5 name="camera" size={24} color="#E73688" />
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.icon}>
-          <AntDesign name="picture" size={24} color="#006AFF" />
+          <AntDesign name="picture" size={24} color="#E73688" />
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.icon}>
-          <FontAwesome name="microphone" size={24} color="#006AFF" />
+          <FontAwesome name="microphone" size={24} color="#E73688" />
         </TouchableOpacity>
 
         <View style={styles.sendMsgContainer}>
@@ -70,14 +70,14 @@ const ChatScreen = ({route, navigation}) => {
             style={styles.input}
             onChangeText={text => setInput(text)}
           />
-          <Entypo name="emoji-happy" size={16} color="gray" />
+          <Entypo name="emoji-happy" size={16} color="#E73688" />
         </View>
 
         <TouchableOpacity style={styles.icon}>
           {input === '' ? (
-            <AntDesign name="like1" size={24} color="#006AFF" />
+            <AntDesign name="like1" size={24} color="#E73688" />
           ) : (
-            <FontAwesome name="send" size={24} color="#006AFF" />
+            <FontAwesome name="send" size={24} color="#E73688" />
           )}
         </TouchableOpacity>
       </View>
@@ -88,7 +88,6 @@ const ChatScreen = ({route, navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10,
   },
   user: {
     flexDirection: 'row',
@@ -98,8 +97,17 @@ const styles = StyleSheet.create({
   },
   screenHeader: {
     flexDirection: 'row',
-    marginBottom: 20,
     alignItems: 'center',
+    backgroundColor: 'white',
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.2,
+    shadowRadius: 3.84,
+    elevation: 5,
+    zIndex: 1,
+    marginBottom: 20,
   },
   messageHeader: {
     fontWeight: 'bold',
