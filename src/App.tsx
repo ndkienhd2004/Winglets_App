@@ -11,6 +11,7 @@ import LoginScreen from './Screens/LoginScreen';
 import RegistrationScreen from './Screens/RegistrationScreen';
 import ProfileScreen from './Screens/ProfileScreen';
 import ChatScreen from './Screens/ChatScreen';
+import EditProfile from './Screens/EditProfile';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -56,6 +57,7 @@ const App = () => {
                 options={{headerShown: false}}
               />
               <Stack.Screen name="ChatScreen" component={ChatScreen} />
+              <Stack.Screen name="EditProfile" component={EditProfile} />
             </>
           ) : (
             <Stack.Screen name="Auth" component={AuthStack} />

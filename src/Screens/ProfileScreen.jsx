@@ -1,3 +1,4 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {
   StyleSheet,
@@ -15,8 +16,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const screenWidth = Dimensions.get('window').width;
 
 const ProfileScreen = () => {
-  const [status, setStatus] = useState('premium'); // State variable to manage 'premium' or 'boost'
-
+  const [status, setStatus] = useState('premium');
+  const navigation = useNavigation();
   const handleScroll = event => {
     const contentOffsetX = event.nativeEvent.contentOffset.x;
     const index = Math.round(contentOffsetX / screenWidth);
@@ -29,14 +30,15 @@ const ProfileScreen = () => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <View>
           <Text style={styles.pageHeader}>Profile</Text>
-          <TouchableOpacity style={{alignSelf: 'center'}}>
+          <TouchableOpacity
+            style={{alignSelf: 'center'}}
+            onPress={() => navigation.navigate('EditProfile')}>
             <View style={styles.profileImage}>
               <Image
                 source={{
                   uri: 'https://raw.githubusercontent.com/DesignIntoCode/ReactProfile02/master/assets/profile-pic.jpg',
                 }}
-                style={styles.image}
-                resizeMode="center"></Image>
+                style={styles.image}></Image>
             </View>
             <View style={styles.changeInfo}>
               <Icon
