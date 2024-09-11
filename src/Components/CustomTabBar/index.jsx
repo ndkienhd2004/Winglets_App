@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import {BottomTabBar} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import CranesIcon from '../CranesIcon';
+import WingletsIcon from '../WingletsIcon';
 const CustomTabBar = ({state, descriptors, navigation}) => {
   return (
     <View style={styles.tabBarContainer}>
@@ -27,9 +27,9 @@ const CustomTabBar = ({state, descriptors, navigation}) => {
         const renderIcon = (routeName, isFocused) => {
           let iconName;
           switch (routeName) {
-            case 'Home':
+            case 'Winglets':
               return (
-                <CranesIcon
+                <WingletsIcon
                   width={60}
                   height={24}
                   fill={isFocused ? '#E73688' : '#000'}

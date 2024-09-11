@@ -12,6 +12,7 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import profile from '../../assets/data/profile';
 
 const screenWidth = Dimensions.get('window').width;
 
@@ -36,7 +37,7 @@ const ProfileScreen = () => {
             <View style={styles.profileImage}>
               <Image
                 source={{
-                  uri: 'https://raw.githubusercontent.com/DesignIntoCode/ReactProfile02/master/assets/profile-pic.jpg',
+                  uri: profile.avt,
                 }}
                 style={styles.image}></Image>
             </View>
@@ -51,7 +52,7 @@ const ProfileScreen = () => {
           <View style={styles.infoContainer}>
             <Text
               style={[styles.profileText, {fontWeight: '120', fontSize: 36}]}>
-              Julie, 29
+              {profile.name}, {profile.age}
             </Text>
           </View>
           <View>

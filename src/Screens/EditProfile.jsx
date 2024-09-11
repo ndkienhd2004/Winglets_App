@@ -11,20 +11,19 @@ import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import * as ImagePicker from 'react-native-image-picker';
 import {ScrollView} from 'react-native';
+import profile from '../../assets/data/profile';
 const EditProfile = () => {
   const navigation = useNavigation();
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState(profile.bio || '');
   const [workModalVisible, setWorkModalVisible] = useState(false);
   const [eduModalVisible, setEduModalVisible] = useState(false);
   const [genModalVisible, setGenModalVisible] = useState(false);
   const [locateModalVisible, setLocateModalVisible] = useState(false);
   const [homeModalVisible, setHomeModalVisible] = useState(false);
-  const [selectedGender, setSelectedGender] = useState('Man');
+  const [selectedGender, setSelectedGender] = useState(profile.gender || 'Man');
   const [isGenderVisible, setIsGenderVisible] = useState(true);
 
-  const [profileImage, setProfileImage] = useState(
-    'https://raw.githubusercontent.com/DesignIntoCode/ReactProfile02/master/assets/profile-pic.jpg',
-  );
+  const [profileImage, setProfileImage] = useState(profile.avt);
   const chooseImage = async () => {
     const result = await ImagePicker.launchImageLibrary({
       mediaType: 'photo',
@@ -99,6 +98,7 @@ const EditProfile = () => {
             <TextInput
               placeholder="A little bit about you...."
               style={styles.input}
+              value={input}
               onChangeText={text => setInput(text)}
             />
           </View>
@@ -111,7 +111,9 @@ const EditProfile = () => {
                 <MaterialIcons name="business-center" size={16} />
                 <Text style={styles.tableRowText}>Work</Text>
                 <View style={styles.rowEnd}>
-                  <Text style={{fontWeight: '500'}}>Add</Text>
+                  <Text style={{fontWeight: '500'}}>
+                    {profile.work || 'Add'}
+                  </Text>
                   <Feather name="chevron-right" size={16} />
                 </View>
               </TouchableOpacity>
@@ -121,7 +123,9 @@ const EditProfile = () => {
                 <Ionicons name="school" size={16} />
                 <Text style={styles.tableRowText}>Education</Text>
                 <View style={styles.rowEnd}>
-                  <Text style={{fontWeight: '500'}}>Add</Text>
+                  <Text style={{fontWeight: '500'}}>
+                    {profile.education || 'Add'}
+                  </Text>
                   <Feather name="chevron-right" size={16} />
                 </View>
               </TouchableOpacity>
@@ -139,7 +143,9 @@ const EditProfile = () => {
                 <Entypo name="location" size={16} />
                 <Text style={styles.tableRowText}>Location</Text>
                 <View style={styles.rowEnd}>
-                  <Text style={{fontWeight: '500'}}>Add</Text>
+                  <Text style={{fontWeight: '500'}}>
+                    {profile.location || 'Add'}
+                  </Text>
                   <Feather name="chevron-right" size={16} />
                 </View>
               </TouchableOpacity>
@@ -147,7 +153,9 @@ const EditProfile = () => {
                 <Entypo name="home" size={16} />
                 <Text style={styles.tableRowText}>Hometown</Text>
                 <View style={styles.rowEnd}>
-                  <Text style={{fontWeight: '500'}}>Add</Text>
+                  <Text style={{fontWeight: '500'}}>
+                    {profile.hometown || 'Add'}
+                  </Text>
                   <Feather name="chevron-right" size={16} />
                 </View>
               </TouchableOpacity>
