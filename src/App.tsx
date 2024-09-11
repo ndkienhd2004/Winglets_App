@@ -12,6 +12,7 @@ import RegistrationScreen from './Screens/RegistrationScreen';
 import ProfileScreen from './Screens/ProfileScreen';
 import ChatScreen from './Screens/ChatScreen';
 import EditProfile from './Screens/EditProfile';
+import LikedScreen from './Screens/LikedScreen';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -40,7 +41,8 @@ const App = () => {
         tabBarActiveTintColor: '#E73688',
       }}>
       <Tab.Screen name="Profile" component={ProfileScreen} />
-      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Winglets" component={HomeScreen} />
+      <Tab.Screen name="Liked You" component={LikedScreen} />
       <Tab.Screen name="Chats" component={MatchesScreen} />
     </Tab.Navigator>
   );
